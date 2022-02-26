@@ -1,48 +1,35 @@
-import React from 'react'
+// import React from 'react'
 import { Checkbox } from 'antd'
+import { connect } from 'react-redux'
+
+import * as actions from '../../actions/actions'
 
 import classes from './SidePanel.module.scss'
 
 const CheckboxGroup = Checkbox.Group
 
-const SidePanel = () => {
-  const plainOptions = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки']
-  const defaultCheckedList = ['Без пересадок', '1 пересадка', '2 пересадки']
+const SidePanel = ({ checkbox, onCheckItemChange, checkAll }) => {
+  const { checkedList, checkListData, isAllChecked } = checkbox
+  const checksName = checkListData.map((item) => item.checkName)
 
-  const [checkedList, setCheckedList] = React.useState(defaultCheckedList)
-  const [indeterminate, setIndeterminate] = React.useState(true)
-  const [checkAll, setCheckAll] = React.useState(false)
-
-  const onChange = (list) => {
-    setCheckedList(list)
-    setIndeterminate(!!list.length && list.length < plainOptions.length)
-    setCheckAll(list.length === plainOptions.length)
-  }
-
-  const onCheckAllChange = (e) => {
-    setCheckedList(e.target.checked ? plainOptions : [])
-    setIndeterminate(false)
-    setCheckAll(e.target.checked)
-  }
   return (
     <aside className={classes.SiderPanel}>
       <h1 className={classes.title}>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
-      <Checkbox
-        className={classes['chekbox-all']}
-        indeterminate={indeterminate}
-        onChange={onCheckAllChange}
-        checked={checkAll}
-      >
+      <Checkbox className={classes['chekbox-all']} onChange={(event) => checkAll(event)} checked={isAllChecked}>
         Все
       </Checkbox>
       <CheckboxGroup
         className={classes['chekbox-group']}
-        options={plainOptions}
+        options={checksName}
         value={checkedList}
-        onChange={onChange}
+        onChange={(list) => onCheckItemChange(list, checkListData)}
       />
     </aside>
   )
 }
 
-export default SidePanel
+const mapStateToProps = (state) => ({
+  checkbox: state.checkbox,
+})
+
+export default connect(mapStateToProps, actions)(SidePanel)

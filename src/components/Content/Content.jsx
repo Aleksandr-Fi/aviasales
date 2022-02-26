@@ -1,20 +1,26 @@
 import { Radio } from 'antd'
+import { connect } from 'react-redux'
 
+import * as actions from '../../actions/actions'
 import ListTickets from '../ListTickets'
 
 import classes from './Content.module.scss'
 
-const Content = () => {
+const Content = ({ filter, setFilter }) => {
   return (
     <section className={classes.Content}>
-      <Radio.Group className={classes['radio-filter']} defaultValue="a" buttonStyle="solid">
-        <Radio.Button className={classes['radio-btn']} value="a">
+      <Radio.Group className={classes['radio-filter']} defaultValue={filter.filterType} buttonStyle="solid">
+        <Radio.Button className={classes['radio-btn']} value="cheap" onClick={(event) => setFilter(event.target.value)}>
           САМЫЙ ДЕШЕВЫЙ
         </Radio.Button>
-        <Radio.Button className={classes['radio-btn']} value="b">
+        <Radio.Button className={classes['radio-btn']} value="fast" onClick={(event) => setFilter(event.target.value)}>
           САМЫЙ БЫСТРЫЙ
         </Radio.Button>
-        <Radio.Button className={classes['radio-btn']} value="c">
+        <Radio.Button
+          className={classes['radio-btn']}
+          value="optimal"
+          onClick={(event) => setFilter(event.target.value)}
+        >
           ОПТИМАЛЬНЫЙ
         </Radio.Button>
       </Radio.Group>
@@ -24,4 +30,8 @@ const Content = () => {
   )
 }
 
-export default Content
+const mapStateToProps = (state) => ({
+  filter: state.tabFilter,
+})
+
+export default connect(mapStateToProps, actions)(Content)

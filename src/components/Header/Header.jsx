@@ -1,7 +1,6 @@
 import classes from './Header.module.scss'
 
 const Header = () => {
-  console.log(classes)
   return (
     <header className={classes.Header}>
       <img

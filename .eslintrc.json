@@ -7,10 +7,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended",
     "prettier"
   ],
   "parser": "@babel/eslint-parser",
@@ -28,8 +28,7 @@
   },
   "plugins": ["react", "prettier", "import"],
   "rules": {
-    "indent": ["error", 2],
-    "prettier/prettier": "error",
+    // "indent": ["error", 2],
     "linebreak-style": [0, "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
@@ -43,7 +42,8 @@
         "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
         "newlines-between": "always"
       }
-    ]
+    ],
+    "prettier/prettier": "error"
   },
   "settings": {
     "react": { "version": "detect" },
