@@ -1,0 +1,68 @@
+.Content {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  &__btn {
+  height: 50px;
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
+  background: #2196F3;
+  border: #2196F3;
+  border-radius: 5px; 
+  cursor: pointer;
+  text-transform: uppercase;
+  }
+}
+
+.radio-filter {
+  width: 502px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-btn {
+  background: white;
+  width: inherit;
+  height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 9px;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  &:first-of-type {
+    border-radius: 6px 0 0 6px ;
+  }
+  &:last-of-type {
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .Content {
+    grid-column: 2 / 3;
+    grid-row: 2/3;
+  }
+
+  .radio-filter { 
+    width: auto;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .radio-btn {
+    border-radius: 6px; 
+    padding-top: 4px;
+    margin-bottom: 5px;
+    &:first-of-type {
+      border-radius: 6px; 
+    }
+    &:last-of-type {
+      border-radius:  6px; 
+    }
+  }
+}

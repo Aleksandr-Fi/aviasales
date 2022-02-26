@@ -1,0 +1,48 @@
+.Ticket {
+  width: 502px;
+  height: 184px;
+  border-radius: 5px;
+  padding: 20px;
+  background: #FFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  
+  display: flex;
+  flex-direction: column;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+
+    display: flex;
+    align-items: center;
+    /* Primary Colors/Primary 500 */
+    color: #2196F3;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    height: 39px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    align-items: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    & div {
+      width: 140px;
+    }
+    
+    & span {
+      color: #A0B0B9;
+    }
+  }
+}

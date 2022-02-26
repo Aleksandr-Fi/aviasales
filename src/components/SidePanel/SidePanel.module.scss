@@ -1,0 +1,54 @@
+
+.SiderPanel {
+  width: 232px;
+  height: 252px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background: #FFFFFF;
+  padding: 20px;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  & .title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.chekbox-all {
+  height: 40px;
+  padding-top: 7px;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.chekbox-group {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  & label {
+  height: 40px;
+  padding-top: 7px;
+  font-size: 13px;
+  line-height: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .SiderPanel {
+    width: 200px;
+    height: auto;
+    grid-column: 1 / 2;
+    padding: 11px;
+    & .title { 
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
+  .checkbox-group {  
+    column-gap: 10px;
+  }
+}

@@ -1,0 +1,18 @@
+.Header {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Header__logo {
+  width: 82px;
+  height: 89px;
+}
+
+@media (max-width: 420px) {
+  .Header__logo {
+    transform: scale(0.75);
+  }
+}

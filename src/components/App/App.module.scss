@@ -1,0 +1,25 @@
+.App {
+  width: 960px;
+  background: #F1FCFF;
+  margin: 0 auto;
+  color: #4A4A4A;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 232px auto;
+  grid-template-rows: 160px auto;
+  gap: 0 20px;
+  padding: 0 103px;
+  
+  font-family: Open Sans;
+  font-style: normal;
+}
+
+@media (max-width: 420px) {
+  .App {
+    width: 420px;
+    grid-template-columns: 202px 178px;
+    grid-template-rows: 70px auto auto auto;
+    gap:  10px;
+    padding: 0 10px;
+  }
+}
