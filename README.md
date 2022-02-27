@@ -1,3 +1,3 @@
 # link to the deployed application
 
-https://aviasales-wheat.vercel.app/
+https://aviasales-aleksandr-fi.vercel.app/
