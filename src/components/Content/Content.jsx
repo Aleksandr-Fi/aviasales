@@ -6,7 +6,7 @@ import ListTickets from '../ListTickets'
 
 import classes from './Content.module.scss'
 
-const Content = ({ filter, setFilter }) => {
+const Content = ({ filter, setFilter, addTicketsShows }) => {
   return (
     <section className={classes.Content}>
       <Radio.Group className={classes['radio-filter']} defaultValue={filter.filterType} buttonStyle="solid">
@@ -25,7 +25,9 @@ const Content = ({ filter, setFilter }) => {
         </Radio.Button>
       </Radio.Group>
       <ListTickets />
-      <button className={classes.Content__btn}>Показать еще 5 билетов!</button>
+      <button onClick={addTicketsShows} className={classes.Content__btn}>
+        Показать еще 5 билетов!
+      </button>
     </section>
   )
 }
