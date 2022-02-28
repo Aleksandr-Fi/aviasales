@@ -50,6 +50,12 @@ const checkbox = (state = checkboxState, action = 'ACTION') => {
 
 const tabFilterState = {
   filterType: 'cheap',
+  filterFuncCheap: (elemA, elemB) => elemA.price - elemB.price,
+  filterFuncFast: (elemA, elemB) =>
+    elemA.segments[0].duration + elemA.segments[1].duration - (elemB.segments[0].duration + elemB.segments[1].duration),
+  filterFuncOptimal: (elemA, elemB) =>
+    elemA.price / (elemA.segments[0].duration + elemA.segments[1].duration) -
+    elemB.price / (elemB.segments[0].duration + elemB.segments[1].duration),
 }
 
 const tabFilter = (state = tabFilterState, action = 'ACTION') => {
@@ -64,9 +70,43 @@ const tabFilter = (state = tabFilterState, action = 'ACTION') => {
   }
 }
 
-const reduce = combineReducers({
+const searchDataState = {
+  ticketsData: [],
+  stop: false,
+}
+
+const ticketShows = (state = 5, action = 'ACTION') => {
+  switch (action.type) {
+    case 'ADD_TICKETS_SHOWS': {
+      state += 5
+      return state
+    }
+    default:
+      return state
+  }
+}
+
+const searchData = (state = searchDataState, action = 'ACTION') => {
+  const { type, ticketsData, stop } = action
+  const newTickets = Array.from(state.ticketsData)
+  switch (type) {
+    case 'DATA_RECCEIVED':
+      newTickets.push(...ticketsData)
+      return {
+        ...state,
+        ticketsData: newTickets,
+        stop,
+      }
+    default:
+      return state
+  }
+}
+
+const reducer = combineReducers({
   checkbox,
   tabFilter,
+  searchData,
+  ticketShows,
 })
 
-export default reduce
+export default reducer

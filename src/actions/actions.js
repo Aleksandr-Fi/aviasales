@@ -19,3 +19,5 @@ export const onCheckItemChange = (list, checkedList) => {
 }
 
 export const setFilter = (filter) => ({ type: 'SET_FILTER', filterType: filter })
+
+export const addTicketsShows = () => ({ type: 'ADD_TICKETS_SHOWS' })
