@@ -29,17 +29,6 @@ const ListTickets = ({ data, ticketCount, filter, checkbox }) => {
 
   const ticketsArray = ticketsDataSort.slice(0, ticketCount)
 
-  // const tickets = ticketsArray.map((item) => (
-  //   <div className={classes.ticket} key={keys()}>
-  //     <div className={classes["ticket-details"]}>
-  //       <p className={classes["ticket-price"]}>{priceStyle(item.price)} P</p>
-  //       <img src={`http://pics.avs.io/110/36/${item.carrier}.png`}
-  //         alt="companies logo" style={{ alignSelf: "flex-start" }} />
-  //     </div>
-  //     {ticketDetails(item.segments)}
-  //   </div>
-  // ));
-
   const errorMessage = (
     <div className={classes['ticket-wrapper']}>Рейсов, подходящих под заданные фильтры, не найдено</div>
   )
@@ -54,11 +43,6 @@ const ListTickets = ({ data, ticketCount, filter, checkbox }) => {
       {ticketsArray.map((ticketData) => (
         <Ticket key={tiketKey++} ticketData={ticketData} id={tiketKey++} />
       ))}
-      {/* <Ticket />
-      <Ticket />
-      <Ticket />
-      <Ticket />
-      <Ticket /> */}
     </div>
   ) : (
     errorMessage
