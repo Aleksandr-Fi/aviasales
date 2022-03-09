@@ -90,7 +90,7 @@ const searchData = (state = searchDataState, action = 'ACTION') => {
   const { type, ticketsData, stop } = action
   const newTickets = Array.from(state.ticketsData)
   switch (type) {
-    case 'DATA_RECCEIVED':
+    case 'DATA_RECEIVED':
       newTickets.push(...ticketsData)
       return {
         ...state,

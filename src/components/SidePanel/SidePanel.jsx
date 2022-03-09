@@ -13,13 +13,13 @@ const SidePanel = ({ checkbox, onCheckItemChange, checkAll }) => {
   const checksName = checkListData.map((item) => item.checkName)
 
   return (
-    <aside className={classes.SiderPanel}>
+    <aside className={classes.SidePanel}>
       <h1 className={classes.title}>КОЛИЧЕСТВО ПЕРЕСАДОК</h1>
-      <Checkbox className={classes['chekbox-all']} onChange={(event) => checkAll(event)} checked={isAllChecked}>
+      <Checkbox className={classes['checkbox-all']} onChange={(event) => checkAll(event)} checked={isAllChecked}>
         Все
       </Checkbox>
       <CheckboxGroup
-        className={classes['chekbox-group']}
+        className={classes['checkbox-group']}
         options={checksName}
         value={checkedList}
         onChange={(list) => onCheckItemChange(list, checkListData)}

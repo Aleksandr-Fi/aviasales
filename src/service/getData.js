@@ -1,5 +1,5 @@
-const ticketsRecived = (response) => ({
-  type: 'DATA_RECCEIVED',
+const ticketsReceived = (response) => ({
+  type: 'DATA_RECEIVED',
   ticketsData: response.tickets,
   stop: response.stop,
 })
@@ -15,7 +15,7 @@ const getTickets = async (url, dispatch) => {
 
   if (res.ok) {
     const body = await res.json()
-    dispatch(ticketsRecived(body))
+    dispatch(ticketsReceived(body))
     if (!body.stop) getTickets(url, dispatch)
   } else {
     getTickets(url, dispatch)

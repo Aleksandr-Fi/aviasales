@@ -1,5 +1,5 @@
 
-.SiderPanel {
+.SidePanel {
   width: 232px;
   height: 252px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -15,7 +15,7 @@
   }
 }
 
-.chekbox-all {
+.checkbox-all {
   height: 40px;
   padding-top: 7px;
   font-weight: normal;
@@ -24,7 +24,7 @@
   font-weight: 400;
 }
 
-.chekbox-group {
+.checkbox-group {
   display: flex;
   flex-direction: column;
   font-weight: 400;
@@ -37,7 +37,7 @@
 }
 
 @media (max-width: 420px) {
-  .SiderPanel {
+  .SidePanel {
     width: 200px;
     height: auto;
     grid-column: 1 / 2;

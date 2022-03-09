@@ -35,13 +35,13 @@ const ListTickets = ({ data, ticketCount, filter, checkbox }) => {
 
   const loadMessage = (isStop) => (isStop ? null : <p>Данные по билетам еще загружаются</p>)
 
-  let tiketKey = 1
+  let ticketKey = 1
 
   return ticketsDataSort.length ? (
     <div className={classes.ListTickets}>
       {loadMessage(stop)}
       {ticketsArray.map((ticketData) => (
-        <Ticket key={tiketKey++} ticketData={ticketData} id={tiketKey++} />
+        <Ticket key={ticketKey++} ticketData={ticketData} id={ticketKey++} />
       ))}
     </div>
   ) : (
