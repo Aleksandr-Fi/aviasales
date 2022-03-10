@@ -1,7 +1,7 @@
 import { Radio } from 'antd'
 import { connect } from 'react-redux'
 
-import * as actions from '../../actions/actions'
+import * as actions from '../../store/actions/actions'
 import ListTickets from '../ListTickets'
 
 import classes from './Content.module.scss'

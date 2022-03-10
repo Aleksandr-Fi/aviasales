@@ -5,13 +5,13 @@ const ticketsReceived = (response) => ({
 })
 
 const getSearchId = async () => {
-  const getUrl = await fetch('https://aviasales-test-api.java-mentor.com/search')
+  const getUrl = await fetch('https://front-test.beta.aviasales.ru/search')
   const url = await getUrl.json()
   return url
 }
 
 const getTickets = async (url, dispatch) => {
-  const res = await fetch(`https://aviasales-test-api.java-mentor.com/tickets?searchId=${url}`)
+  const res = await fetch(`https://front-test.beta.aviasales.ru/tickets?searchId=${url}`)
 
   if (res.ok) {
     const body = await res.json()

@@ -4,10 +4,10 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 
-import reducer from './reducer/reducer'
+import reducer from './store/reducer/reducer'
 import 'antd/dist/antd.css'
 import App from './components/App'
-import getTicketData from './service/getData'
+import getTicketData from './api'
 
 const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
