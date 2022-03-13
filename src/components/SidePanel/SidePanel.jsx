@@ -1,6 +1,7 @@
 // import React from 'react'
 import { Checkbox } from 'antd'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import * as actions from '../../store/actions/actions'
 
@@ -32,4 +33,8 @@ const mapStateToProps = (state) => ({
   checkbox: state.checkbox,
 })
 
-export default connect(mapStateToProps, actions)(SidePanel)
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SidePanel)
