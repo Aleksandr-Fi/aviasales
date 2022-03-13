@@ -1,5 +1,6 @@
 import { Radio } from 'antd'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import * as actions from '../../store/actions/actions'
 import ListTickets from '../ListTickets'
@@ -36,4 +37,8 @@ const mapStateToProps = (state) => ({
   filter: state.tabFilter,
 })
 
-export default connect(mapStateToProps, actions)(Content)
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actions, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content)
